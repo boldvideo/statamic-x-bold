@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ title ?? site:name }}</title>
+    <meta property="og:title" content="{{ title ?? site:name }}" />
+    <meta property="og:url" content="https://statamic.bold.video/" />
+    <meta property="og:image" content="https://statamic.bold.video/assets/statamic-x-bold-opengraph.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="A quick demo of Statamic and Bold" />
+    <meta property="og:locale" content="en_US" />
     {{ vite src="resources/js/site.js|resources/css/site.css" }}
 </head>
 
