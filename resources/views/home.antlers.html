@@ -14,16 +14,38 @@
 </a>
 <article class="mt-4 bg-white p-8 shadow-xl rounded-xl max-w-xl prose">
     {{ content | widont }}
+
     {{ bold_fetcher }}
 
-    <div class="video">
-        <a href="/v/{{ id }}" class="">
-            <img src="{{ thumbnail }}" alt="{{ title }} thumbnail">
-            <h3>{{ title }}</h3>
-            <p>{{ description }}</p>
+    <div class="video relative">
+        <a href="/v/{{ id }}" class="group block no-underline cursor-pointer">
+            <div class="relative">
+                <img src="{{ thumbnail }}" alt="{{ title }} thumbnail" class="aspect-video w-full h-auto mb-4">
+
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <div class="bg-white group-hover:bg-[#ff269e] p-2 rounded-full">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="pl-1 w-10 h-10 text-[#ff269e] group-hover:text-white"
+                            viewBox="0 0 24 24">
+                            <path d="M5 3l14 9-14 9V3z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="absolute bottom-4 right-4 bg-black text-white rounded p-1 text-sm">
+                    {{ duration }}
+                </div>
+            </div>
+
+            <h3 class="mt-2 text-xl">{{ title }}</h3>
+
+            <!-- Description cut off -->
+            <p class="line-clamp-2">{{ description }}</p>
         </a>
     </div>
 
     {{ /bold_fetcher }}
+
+
 
 </article>
